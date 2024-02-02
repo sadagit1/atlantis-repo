@@ -7,11 +7,11 @@ resource "aws_s3_bucket" "atlantis_bucket" {
  #
  }
 
-resource "aws_instance" "atlantis-poc-test" {
+resource "aws_instance" "atlantis-poc-test11" {
   ami           = "ami-04e914639d0cca79a"
   instance_type = "t2.micro"
 
   tags = {
-    Name = "atlantis-poc-test"
+    Name = "atlantis-poc-test11"
   }
 }
