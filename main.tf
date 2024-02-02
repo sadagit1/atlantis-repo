@@ -6,3 +6,12 @@ resource "aws_s3_bucket" "atlantis_bucket" {
   bucket = "atlantisbucket100"
  #
  }
+
+resource "aws_instance" "atlantis-poc-test" {
+  ami           = "ami-04e914639d0cca79a"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "atlantis-poc-test"
+  }
+}
