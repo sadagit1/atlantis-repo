@@ -12,6 +12,6 @@ resource "aws_instance" "atlantis-poc-test77" {
   instance_type = "t2.micro"
 
   tags = {
-    Name = "atlantis-poc-test77"
+    Name = "atlantis--poc-test77"
   }
 }
