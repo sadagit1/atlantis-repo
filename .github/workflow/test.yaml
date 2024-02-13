@@ -1,4 +1,4 @@
-name: Docker Build
+name: Notification Docker Build
 
 on:
   push:
