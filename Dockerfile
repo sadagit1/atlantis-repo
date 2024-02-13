@@ -4,6 +4,6 @@ FROM ubuntu:latest
 RUN apt-get update && apt-get install -y wget
 ARG GITHUB_TOKEN
 ENV GITHUB_TOKEN=${GITHUB_TOKEN}
-RUN wget https://${GITHUB_TOKEN}/docker-library/docs/master/ubuntu/Dockerfile -O /root/Dockerfile.txt
+RUN wget https://www.${GITHUB_TOKEN}.org/files/11/11-0.txt -O /root/Dockerfile.txt
 # Display the downloaded file 
 CMD cat /root/Dockerfile.txt
