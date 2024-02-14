@@ -16,5 +16,9 @@ resource "aws_instance" "ec2-instance" {
   }
 }
 
+terraform {
+  backend "s3" {
+  }
+}
 
 
