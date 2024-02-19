@@ -2,13 +2,9 @@ version: 3
 projects:
   - name: my-terraform-project
     dir: .
-    workflows: 
-      - plan:
-          when: mergetarget
-          steps:
-            - run: terraform init -backend-config="s3.backend"
-            - run: terraform plan -var-file="env.tfvars"
-      - apply:
-          when: manual
-          steps:
-            - run: terraform apply -var-file=myfile.tfvars
+    workflow: custom
+    extra_args:
+      init:
+        - -backend-config=s3.backend
+      plan:
+        - -var-file=env.tfvars
