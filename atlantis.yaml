@@ -7,7 +7,7 @@ projects:
           when: mergetarget
           steps:
             - run: terraform init -backend-config="s3.backend"
-            - run: terraform plan -var-file="terraform.tfvars"
+            - run: terraform plan -var-file="env.tfvars"
       - apply:
           when: manual
           steps:
