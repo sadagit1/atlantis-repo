@@ -2,9 +2,6 @@ version: 3
 projects:
   - name: my-terraform-project
     dir: .
-    workflow: default
+    workflow: custom
     extra_args:
-      init:
-        init: ["-backend-config", "s3.backend"]
-      plan:
-        - -var-file=env.tfvars
+      init: ["-backend-config", "s3.backend"]
