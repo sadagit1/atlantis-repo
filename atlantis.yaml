@@ -5,6 +5,6 @@ projects:
     workflow: custom
     extra_args:
       init:
-        - -backend-config=s3.backend
+        init: ["-backend-config", "s3.backend"]
       plan:
         - -var-file=env.tfvars
