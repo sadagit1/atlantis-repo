@@ -2,7 +2,7 @@ version: 3
 projects:
   - name: my-terraform-project
     dir: .
-    workflows:
+    workflows: 
       - plan:
           when: mergetarget
           steps:
