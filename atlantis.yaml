@@ -17,14 +17,14 @@
 #         extra_args: ["-backend-config", "backend.hcl"]
 #      - plan:
 #          extra_args: ["-var-file", "env.tfvars"]
-version: 3
-allow_custom_workflows: true
-projects:
-  - name: my-terraform-project
-    dir: .
-    workflow: custom
-    init_args: ["-backend-config", "backend.hcl"]
-    plan_args: ["-var-file", "env.tfvars"]
+# version: 3
+# allow_custom_workflows: true
+# projects:
+#   - name: my-terraform-project
+#     dir: .
+#     workflow: custom
+#     init_args: ["-backend-config", "backend.hcl"]
+#     plan_args: ["-var-file", "env.tfvars"]
 
 
 
