@@ -10,7 +10,7 @@ projects:
   #   enabled: true
   # apply_requirements: [approved]
 workflows:
-  staging:
+  custom:
    plan:
      steps:
      - init:
