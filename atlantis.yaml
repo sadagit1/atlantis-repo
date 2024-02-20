@@ -6,11 +6,11 @@ projects:
   # name: staging
   # workflow: staging
   # terraform_version: v0.14.8
-  # autoplan:
-  #   enabled: true
+  autoplan:
+    enabled: true
   # apply_requirements: [approved]
 workflows:
-  custom:
+  staging:
    plan:
      steps:
      - init:
