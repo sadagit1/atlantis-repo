@@ -3,12 +3,12 @@ allowed_overrides: [workflow]
 allow_custom_workflows: true
 projects:
 - dir: .
-  # name: staging
-  # workflow: staging
-  # terraform_version: v0.14.8
+  name: staging
+  workflow: staging
+  terraform_version: v0.14.8
   autoplan:
     enabled: true
-  # apply_requirements: [approved]
+  apply_requirements: [approved]
 workflows:
   staging:
    plan:
