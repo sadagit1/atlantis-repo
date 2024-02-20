@@ -1,22 +1,30 @@
+# version: 3
+# allowed_overrides: [workflow]
+# allow_custom_workflows: true
+# projects:
+# - dir: .
+#   name: staging
+#   workflow: staging
+#   terraform_version: v0.14.8
+#   autoplan:
+#     enabled: true
+#   apply_requirements: [approved]
+# workflows:
+#   staging:
+#    plan:
+#      steps:
+#      - init:
+#         extra_args: ["-backend-config", "backend.hcl"]
+#      - plan:
+#          extra_args: ["-var-file", "env.tfvars"]
 version: 3
-allowed_overrides: [workflow]
 allow_custom_workflows: true
 projects:
-- dir: .
-  name: staging
-  workflow: staging
-  terraform_version: v0.14.8
-  autoplan:
-    enabled: true
-  apply_requirements: [approved]
-workflows:
-  staging:
-   plan:
-     steps:
-     - init:
-        extra_args: ["-backend-config", "backend.hcl"]
-     - plan:
-         extra_args: ["-var-file", "env.tfvars"]
+  - name: my-terraform-project
+    dir: .
+    workflow: custom
+    init_args: ["-backend-config", "backend.hcl"]
+    plan_args: ["-var-file", "env.tfvars"]
 
 
 
