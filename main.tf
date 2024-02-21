@@ -3,7 +3,11 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "atlantis_bucket" {
-  bucket = "atlantisbucket000"
+<<<<<<< HEAD
+  bucket = "atlantisbucket0001"
+=======
+  bucket = "atlantisbucket00011"
+>>>>>>> 3d27cc0 (initial atlantis test)
  #
  }
 
@@ -12,6 +16,6 @@ resource "aws_instance" "atlantis-poc-test77" {
   instance_type = "t2.micro"
 
   tags = {
-    Name = "atlantis--poc-test77"
+    Name = "atlantis--poc-test777"
   }
 }
