@@ -3,11 +3,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "atlantis_bucket" {
-<<<<<<< HEAD
   bucket = "atlantisbucket0001"
-=======
-  bucket = "atlantisbucket00011"
->>>>>>> 3d27cc0 (initial atlantis test)
  #
  }
 
