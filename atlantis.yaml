@@ -80,6 +80,7 @@
 # projects:
 #   - name: my-terraform-project
 #     dir: .
+#
 version: 3
 projects:
   - name: my-terraform-project
