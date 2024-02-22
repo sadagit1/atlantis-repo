@@ -81,20 +81,26 @@
 #   - name: my-terraform-project
 #     dir: .
 #
-version: 3
-projects:
-  - name: my-terraform-project
-    dir: .
-    workflows:
-      custom:
-        plan:
-          steps:
-            - init:
-                backend_config:
-                  bucket: "atlatisbucket11"
-                  key: "terraform/mystate"
-                  region: "us-east-1"
-                  encrypt: true
-
+# version: 3
+# projects:
+#   - name: my-terraform-project
+#     dir: .
+#     workflows:
+#       custom:
+#         plan:
+#           steps:
+#             - init:
+#                 backend_config:
+#                   bucket: "atlatisbucket11"
+#                   key: "terraform/mystate"
+#                   region: "us-east-1"
+#                   encrypt: true
+workflows:
+  staging:
+    plan:
+      steps:
+      - init
+      - plan:
+          extra_args: ["-var-file", "env.tfvars"]
 
 
