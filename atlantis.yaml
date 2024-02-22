@@ -103,6 +103,7 @@
 #       - init
 #       - plan:
 #           extra_args: ["-var-file", "env.tfvars"]
+version: 3
 workflows:
   staging:
     plan:
