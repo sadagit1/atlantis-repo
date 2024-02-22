@@ -95,13 +95,21 @@
 #                   key: "terraform/mystate"
 #                   region: "us-east-1"
 #                   encrypt: true
-version: 3
+# version: 3
+# workflows:
+#   staging:
+#     plan:
+#       steps:
+#       - init
+#       - plan:
+#           extra_args: ["-var-file", "env.tfvars"]
 workflows:
   staging:
     plan:
       steps:
-      - init
+      - run: ls -lart
+      - init:
+          extra_args: [-backend-config=backend.hcl]
       - plan:
-          extra_args: ["-var-file", "env.tfvars"]
-
+          extra_args: [-var-file=env.tfvars]
 
