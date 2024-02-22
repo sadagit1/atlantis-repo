@@ -103,17 +103,17 @@
 #       - init
 #       - plan:
 #           extra_args: ["-var-file", "env.tfvars"]
-version: 3
-allow_custom_workflows: true
-workflows:
-  staging:
-    plan:
-      steps:
-      - run: ls -lart
-      - init:
-          extra_args: [-backend-config=backend.hcl]
-      - plan:
-          extra_args: [-var-file=env.tfvars]
+# version: 3
+# allow_custom_workflows: true
+# workflows:
+#   staging:
+#     plan:
+#       steps:
+#       - run: ls -lart
+#       - init:
+#           extra_args: [-backend-config=backend.hcl]
+#       - plan:
+#           extra_args: [-var-file=env.tfvars]
 
 # version: 3
 # allow_custom_workflows: true
@@ -126,3 +126,30 @@ workflows:
 #           steps:
 #             - init
 #             - terraform plan -var-file=abc.tfvars
+# atlantis.yaml
+
+# Global server-side configurations
+allow_custom_workflows: true
+automerge: true  # Auto-merge pull requests after successful applies
+
+# # GitHub-related configurations
+# gh_user: your-github-username
+# gh_token: your-github-token
+
+# Repository allowlist
+repo_allowlist:
+  - github.com/sadagit1/atlantis-repo
+
+# Projects or repositories configuration
+projects:
+  - name: my-terraform-project
+    dir: .
+    workflows:
+      custom:
+        plan:
+          steps:
+            - init
+            - terraform plan -var-file=abc.tfvars
+      # apply:
+      #     steps:
+      #       - terraform apply -var-file=abc.tfvars
