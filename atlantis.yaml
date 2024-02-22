@@ -54,6 +54,7 @@
 #           steps:
 #             - init
 #             - terraform plan -var-file=env.tfvars
+# 
 version: 3
 projects:
   - name: my-terraform-project
