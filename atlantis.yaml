@@ -55,7 +55,7 @@
 #             - init
 #             - terraform plan -var-file=env.tfvars
 # 
-version: 3
+version: 2
 projects:
   - name: my-terraform-project
     dir: .
