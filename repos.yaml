@@ -1,4 +1,4 @@
 repos:
 - id: https://github.com/sadagit1/atlantis-repo
   allowed_overrides: [workflow]
-  allow_custom_workflows: true
+  allow_custom_workflows: [true]
