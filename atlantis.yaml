@@ -44,6 +44,16 @@
 #           steps:
 #             - init
 #             - terraform plan -var-file=env.tfvars
+# version: 3
+# projects:
+#   - name: my-terraform-project
+#     dir: .
+#     workflows:
+#       custom:
+#         plan:
+#           steps:
+#             - init
+#             - terraform plan -var-file=env.tfvars
 version: 3
 projects:
   - name: my-terraform-project
@@ -54,7 +64,6 @@ projects:
           steps:
             - init
             - terraform plan -var-file=env.tfvars
-
 
 
 
