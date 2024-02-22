@@ -25,16 +25,25 @@
 #     workflow: custom
 #     init_args: ["-backend-config", "backend.hcl"]
 #     plan_args: ["-var-file", "env.tfvars"]
+# version: 3
+# repos:
+#   - name: my-terraform-project
+#     workflows:
+#       custom:
+#         plan:
+#           steps:
+#             - init
+#             - terraform plan -var-file=env.tfvars
 version: 3
-repos:
+projects:
   - name: my-terraform-project
+    dir: .
     workflows:
       custom:
         plan:
           steps:
             - init
             - terraform plan -var-file=env.tfvars
-
 
 
 
