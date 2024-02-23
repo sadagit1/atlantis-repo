@@ -137,8 +137,8 @@ automerge: true  # Auto-merge pull requests after successful applies
 # gh_token: your-github-token
 
 # Repository allowlist
-repo_allowlist:
-  - github.com/sadagit1/atlantis-repo
+# repo_allowlist:
+#   - github.com/sadagit1/atlantis-repo
 
 # Projects or repositories configuration
 projects:
@@ -149,7 +149,7 @@ projects:
         plan:
           steps:
             - init
-            - terraform plan -var-file=abc.tfvars
+            - terraform plan -var-file=env.tfvars
       # apply:
       #     steps:
       #       - terraform apply -var-file=abc.tfvars
