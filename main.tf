@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "atlantis_bucket" {
-  bucket = "atlantisbucket0001111"
+  bucket = "atlantisbucket00011111"
  #
  }
 
