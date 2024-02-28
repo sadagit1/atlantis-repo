@@ -1,0 +1,155 @@
+version: 3
+# allowed_overrides: [workflow]
+# allow_custom_workflows: true
+# projects:
+# - dir: .
+#   name: staging
+#   workflow: staging
+#   terraform_version: v0.14.8
+#   autoplan:
+#     enabled: true
+#   apply_requirements: [approved]
+# workflows:
+#   staging:
+#    plan:
+#      steps:
+#      - init:
+#         extra_args: ["-backend-config", "backend.hcl"]
+#      - plan:
+#          extra_args: ["-var-file", "env.tfvars"]
+# version: 3
+# allow_custom_workflows: true
+# projects:
+#   - name: my-terraform-project
+#     dir: .
+#     workflow: custom
+#     init_args: ["-backend-config", "backend.hcl"]
+#     plan_args: ["-var-file", "env.tfvars"]
+# version: 3
+# repos:
+#   - name: my-terraform-project
+#     workflows:
+#       custom:
+#         plan:
+#           steps:
+#             - init
+#             - terraform plan -var-file=env.tfvars
+# version: 3
+# projects:
+#   - name: my-terraform-project
+#     dir: .
+#     workflows:
+#       custom:
+#         plan:
+#           steps:
+#             - init
+#             - terraform plan -var-file=env.tfvars
+# version: 3
+# projects:
+#   - name: my-terraform-project
+#     dir: .
+#     workflows:
+#       custom:
+#         plan:
+#           steps:
+#             - init
+#             - terraform plan -var-file=env.tfvars
+# 
+# version: 2
+# projects:
+#   - name: my-terraform-project
+#     dir: .
+#     workflows:
+#       custom:
+#         plan:
+#           steps:
+#             - init
+#             - terraform plan -var-file=env.tfvars
+# ---
+# version: 2
+# projects:
+#   - name: my-terraform-project
+#     dir: .
+#     workflows:
+#       custom:
+#         plan:
+#           steps:
+#             - init
+#             - terraform plan -var-file=env.tfvars
+# version: 3
+# projects:
+#   - name: my-terraform-project
+#     dir: .
+#
+# version: 3
+# projects:
+#   - name: my-terraform-project
+#     dir: .
+#     workflows:
+#       custom:
+#         plan:
+#           steps:
+#             - init:
+#                 backend_config:
+#                   bucket: "atlatisbucket11"
+#                   key: "terraform/mystate"
+#                   region: "us-east-1"
+#                   encrypt: true
+# version: 3
+# workflows:
+#   staging:
+#     plan:
+#       steps:
+#       - init
+#       - plan:
+#           extra_args: ["-var-file", "env.tfvars"]
+# version: 3
+# allow_custom_workflows: true
+# workflows:
+#   staging:
+#     plan:
+#       steps:
+#       - run: ls -lart
+#       - init:
+#           extra_args: [-backend-config=backend.hcl]
+#       - plan:
+#           extra_args: [-var-file=env.tfvars]
+
+# version: 3
+# allow_custom_workflows: true
+# projects:
+#   - name: my-terraform-project
+#     dir: .
+#     workflows:
+#       custom:
+#         plan:
+#           steps:
+#             - init
+#             - terraform plan -var-file=abc.tfvars
+# atlantis.yaml
+
+# Global server-side configurations
+# allow_custom_workflows: true
+automerge: true  # Auto-merge pull requests after successful applies
+
+# # GitHub-related configurations
+# gh_user: your-github-username
+# gh_token: your-github-token
+
+# Repository allowlist
+# repo_allowlist:
+#   - github.com/sadagit1/atlantis-repo
+
+# Projects or repositories configuration
+projects:
+  - name: my-terraform-project
+    dir: .
+    workflows:
+      custom:
+        plan:
+          steps:
+            - init
+            - terraform plan -var-file=env.tfvars
+      # apply:
+      #     steps:
+      #       - terraform apply -var-file=abc.tfvars

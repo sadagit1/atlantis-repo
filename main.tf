@@ -1,17 +1,24 @@
 provider "aws" {
-  region = "us-east-1"
+  region = var.region
 }
 
 resource "aws_s3_bucket" "atlantis_bucket" {
-  bucket = "atlantisbucket1111000"
+  bucket = var.bucket_name
  #
  }
 
-resource "aws_instance" "atlantis-poc-test77" {
-  ami           = "ami-0c7217cdde317cfec"
-  instance_type = "t2.micro"
+resource "aws_instance" "ec2-instance" {
+ ami           = var.ami_id
+ instance_type = var.instance_type
 
   tags = {
     Name = "atlantis--poc-test77"
   }
 }
+
+terraform {
+  backend "s3" {
+  }
+}
+
+
